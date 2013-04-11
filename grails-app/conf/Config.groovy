@@ -94,3 +94,18 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'imodv6.ImodUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'imodv6.ImodUserRole'
 grails.plugins.springsecurity.authority.className = 'imodv6.Role'
+
+//mail configuration
+grails {
+	mail {
+	  host = "smtp.gmail.com"
+	  port = 465
+	  username = "imod.grails@gmail.com"
+	  password = "B0bblegum"
+	  props = ["mail.smtp.auth":"true",
+			   "mail.smtp.socketFactory.port":"465",
+			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+			   "mail.smtp.socketFactory.fallback":"false"]
+	}
+ }
+
