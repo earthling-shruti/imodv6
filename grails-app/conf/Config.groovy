@@ -95,6 +95,9 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'imodv6.ImodUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'imodv6.ImodUserRole'
 grails.plugins.springsecurity.authority.className = 'imodv6.Role'
 
+//to allow user to login, avoid double encryption
+grails.plugins.springsecurity.ui.encodePassword = false
+
 //mail configuration
 grails {
 	mail {
