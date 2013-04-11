@@ -2,8 +2,7 @@ package imodv6
 
 class Piechart {
 	Integer count
-	
-	static hasOne = [priority: ContentPriorityCode]
+	ContentPriorityCode priority
 	
 	static belongsTo = [imod:Imod]
 	

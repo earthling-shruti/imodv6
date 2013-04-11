@@ -9,7 +9,7 @@ class Instructor {
 	String officeHours
 	String webPage
 	
-	static hasMany = [phones:InstructorPhone, imods:Imod]
+	static hasMany = [phones:InstructorPhone]
 	
     static constraints = {
     }
