@@ -21,6 +21,13 @@ class Imod {
 		courseComponents:CourseComponentCode, audience:Audience, contents:Content]
 	
     static constraints = {
+		name blank: false, nullable: false
+		creditHours nullable: true
+		numberOfSeats nullable: true
+		coursePolicy nullable: true
+		schedule nullable: true
+		scheduleDate nullable: true
+		piechart nullable: true
     }
 	
 	static mapping = {
