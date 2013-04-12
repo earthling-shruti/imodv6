@@ -11,4 +11,8 @@ class ScheduleDate {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return date
+	}
 }

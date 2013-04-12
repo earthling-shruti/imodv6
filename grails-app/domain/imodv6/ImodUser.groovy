@@ -50,4 +50,8 @@ class ImodUser {
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+	
+	def String toString(){
+		return username
+	}
 }

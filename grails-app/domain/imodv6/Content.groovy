@@ -13,4 +13,8 @@ class Content {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return topicTitle
+	}
 }

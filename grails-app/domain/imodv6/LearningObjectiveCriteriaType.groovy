@@ -9,4 +9,8 @@ class LearningObjectiveCriteriaType {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return description
+	}
 }

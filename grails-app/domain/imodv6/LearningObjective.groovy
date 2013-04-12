@@ -20,4 +20,8 @@ class LearningObjective {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return completeLearningObjective
+	}
 }

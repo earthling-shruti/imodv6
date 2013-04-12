@@ -9,4 +9,8 @@ class ContentPriorityCode {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return description
+	}
 }

@@ -17,4 +17,8 @@ class Instructor {
 	static mapping = {
 		version false
 	}
+
+	def String toString(){
+		return firstName + middleInitial + lastName
+	} 
 }

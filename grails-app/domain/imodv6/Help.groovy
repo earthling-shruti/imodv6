@@ -10,4 +10,8 @@ class Help {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return text //TBD
+	}
 }

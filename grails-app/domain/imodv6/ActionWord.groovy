@@ -13,4 +13,8 @@ class ActionWord {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return actionWord
+	}
 }

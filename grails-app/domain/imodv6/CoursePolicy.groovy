@@ -12,4 +12,8 @@ class CoursePolicy {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return name
+	}
 }

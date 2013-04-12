@@ -12,4 +12,8 @@ class InstructorPhone {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return number
+	}
 }

@@ -10,4 +10,8 @@ class ContentHierarchy {
 	static mapping = {
 		version false
 	}
+	
+	def String toString(){
+		return parentContent
+	}
 }
