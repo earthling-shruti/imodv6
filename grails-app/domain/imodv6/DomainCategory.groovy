@@ -2,7 +2,8 @@ package imodv6
 
 class DomainCategory {
 	String name
-	
+	LearningDomain domain
+
     static constraints = {
     }
 	
