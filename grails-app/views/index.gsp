@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>Welcome to IMOD</title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;
@@ -82,41 +82,60 @@
 	</head>
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
+		
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
-
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
+			<h1>Welcome to IMOD</h1>
+			<p>Welcome to IMOD! The Instructional Module Development (IMoD) 
+				system guides instructors, step-by-step, through an 
+				outcome-based education process as they define learning 
+				objectives, select content to be covered, and define the 
+				learning environment and context for their course(s). The 
+				IMoD software system uses Semantic Web technologies 
+				to provide intelligent interactions with users; dictate a 
+				course design process in conformance with the underlying 
+				framework and provides feedback to the user on their 
+				course design.
+			</p>
+			<br/>
+			<br/>
+			<div id='login'>
+				<div class='inner'>
+					<div class='fheader'><g:message code="springSecurity.login.header"/></div>
+			
+					<g:if test='${flash.message}'>
+						<div class='login_message'>${flash.message}</div>
+					</g:if>
+			
+					<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+						<p>
+							<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
+							<input type='text' class='text_' name='j_username' id='username'/>
+						</p>
+			
+						<p>
+							<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
+							<input type='password' class='text_' name='j_password' id='password'/>
+						</p>
+			
+						<p id="remember_me_holder">
+							<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+							<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
+						</p>
+			
+						<p>
+							<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
+						</p>
+					</form>
+				</div>
 			</div>
+		
 		</div>
+<script type='text/javascript'>
+	<!--
+	(function() {
+		document.forms['loginForm'].elements['j_username'].focus();
+	})();
+	// -->
+</script>
 	</body>
 </html>
