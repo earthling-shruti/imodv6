@@ -24,7 +24,9 @@ class ImodController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [imodInstanceList: Imod.list(params), imodInstanceTotal: Imod.count()]
+		def displayList = Imod.executeQuery("select distinct i from Imod i where i.owner="+currentUser)
+		[imodInstanceList: displayList, imodInstanceTotal: displayList.size()]
+        //[imodInstanceList: Imod.list(params), imodInstanceTotal: Imod.count()]
     }
 
     def create() {
