@@ -6,6 +6,15 @@ class LearningDomainController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+	def springSecurityService
+	
+	def beforeInterceptor ={
+		if(!springSecurityService.isLoggedIn()){
+			redirect(controller:'login', action: 'auth')
+			return false
+		}
+	}
+
     def index() {
         redirect(action: "list", params: params)
     }
@@ -25,15 +34,14 @@ class LearningDomainController {
             render(view: "create", model: [learningDomainInstance: learningDomainInstance])
             return
         }
-
-        flash.message = message(code: 'default.created.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance.id])
+        flash.message = message(code: 'default.created.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
         redirect(action: "show", id: learningDomainInstance.id)
     }
 
     def show(Long id) {
         def learningDomainInstance = LearningDomain.get(id)
         if (!learningDomainInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
             redirect(action: "list")
             return
         }
@@ -44,7 +52,7 @@ class LearningDomainController {
     def edit(Long id) {
         def learningDomainInstance = LearningDomain.get(id)
         if (!learningDomainInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
             redirect(action: "list")
             return
         }
@@ -55,7 +63,7 @@ class LearningDomainController {
     def update(Long id, Long version) {
         def learningDomainInstance = LearningDomain.get(id)
         if (!learningDomainInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
             redirect(action: "list")
             return
         }
@@ -77,25 +85,25 @@ class LearningDomainController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance.id])
+        flash.message = message(code: 'default.updated.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
         redirect(action: "show", id: learningDomainInstance.id)
     }
 
     def delete(Long id) {
         def learningDomainInstance = LearningDomain.get(id)
         if (!learningDomainInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
             redirect(action: "list")
             return
         }
 
         try {
             learningDomainInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), id])
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), id])
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'learningDomain.label', default: 'LearningDomain'), learningDomainInstance])
             redirect(action: "show", id: id)
         }
     }

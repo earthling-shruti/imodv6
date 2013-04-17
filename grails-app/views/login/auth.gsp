@@ -55,11 +55,15 @@
 	}
 
 	#login #remember_me_holder {
-		padding-left: 120px;
+		padding-left: 105px;
 	}
 
 	#login #submit {
-		margin-left: 15px;
+		margin-left: 0px;
+	}
+	
+	#login #register{
+		margin-left: 20px;
 	}
 
 	#login #remember_me_holder label {
@@ -111,6 +115,7 @@
 
 			<p>
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
+				<a id = 'register' href="${createLink(uri: '/register')}">Register</a>
 			</p>
 		</form>
 	</div>

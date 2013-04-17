@@ -112,3 +112,4 @@ grails {
 	}
  }
 
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/imod'
