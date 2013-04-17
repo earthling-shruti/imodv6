@@ -8,11 +8,14 @@ class ImodController {
 
 	def springSecurityService
 	
+	def currentUser
+	
 	def beforeInterceptor ={
 		if(!springSecurityService.isLoggedIn()){
 			redirect(controller:'login', action: 'auth')
 			return false
 		}
+		currentUser = springSecurityService.currentUser.id
 	}
 	
     def index() {
@@ -29,6 +32,12 @@ class ImodController {
     }
 
     def save() {
+		print params
+		params.remove('owner')
+		params.remove('owner.id')
+		params.put('owner.id', currentUser)
+		//params.put('owner', '(id):' + currentUser)
+		print params
         def imodInstance = new Imod(params)
         if (!imodInstance.save(flush: true)) {
             render(view: "create", model: [imodInstance: imodInstance])
