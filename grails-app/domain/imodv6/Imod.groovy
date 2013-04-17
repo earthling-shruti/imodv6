@@ -1,7 +1,7 @@
 package imodv6
 
 class Imod {
-	static belongsTo = ImodUser
+	ImodUser owner
 	String name
 	String url
 	String overview
@@ -17,7 +17,9 @@ class Imod {
 	ScheduleDate scheduleDate
 	Piechart piechart
 	
-	static hasMany = [learningObjectives:LearningObjective, users:ImodUser, instructors:Instructor,
+	static belongsTo = ImodUser
+	
+	static hasMany = [learningObjectives:LearningObjective, sharedOwners:ImodUser, instructors:Instructor,
 		courseComponents:CourseComponentCode, audience:Audience, contents:Content]
 	
     static constraints = {

@@ -177,6 +177,26 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${imodInstance?.owner}">
+				<li class="fieldcontain">
+					<span id="owner-label" class="property-label"><g:message code="imod.owner.label" default="Owner" /></span>
+					
+						<span class="property-value" aria-labelledby="owner-label"><g:link controller="imodUser" action="show" id="${imodInstance?.owner?.id}">${imodInstance?.owner?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.sharedOwners}">
+				<li class="fieldcontain">
+					<span id="sharedOwners-label" class="property-label"><g:message code="imod.sharedOwners.label" default="Shared Owners" /></span>
+					
+						<g:each in="${imodInstance.sharedOwners}" var="s">
+						<span class="property-value" aria-labelledby="sharedOwners-label"><g:link controller="imodUser" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${imodInstance?.subjectArea}">
 				<li class="fieldcontain">
 					<span id="subjectArea-label" class="property-label"><g:message code="imod.subjectArea.label" default="Subject Area" /></span>
@@ -200,17 +220,6 @@
 					<span id="url-label" class="property-label"><g:message code="imod.url.label" default="Url" /></span>
 					
 						<span class="property-value" aria-labelledby="url-label"><g:fieldValue bean="${imodInstance}" field="url"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${imodInstance?.users}">
-				<li class="fieldcontain">
-					<span id="users-label" class="property-label"><g:message code="imod.users.label" default="Users" /></span>
-					
-						<g:each in="${imodInstance.users}" var="u">
-						<span class="property-value" aria-labelledby="users-label"><g:link controller="imodUser" action="show" id="${u.id}">${u?.encodeAsHTML()}</g:link></span>
-						</g:each>
 					
 				</li>
 				</g:if>

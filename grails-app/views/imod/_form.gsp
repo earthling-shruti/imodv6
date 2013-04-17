@@ -139,6 +139,22 @@
 	<g:textField name="overview" value="${imodInstance?.overview}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'owner', 'error')} required">
+	<label for="owner">
+		<g:message code="imod.owner.label" default="Owner" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="owner" name="owner.id" from="${imodv6.ImodUser.list()}" optionKey="id" required="" value="${imodInstance?.owner?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'sharedOwners', 'error')} ">
+	<label for="sharedOwners">
+		<g:message code="imod.sharedOwners.label" default="Shared Owners" />
+		
+	</label>
+	
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'subjectArea', 'error')} ">
 	<label for="subjectArea">
 		<g:message code="imod.subjectArea.label" default="Subject Area" />
@@ -161,13 +177,5 @@
 		
 	</label>
 	<g:textField name="url" value="${imodInstance?.url}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'users', 'error')} ">
-	<label for="users">
-		<g:message code="imod.users.label" default="Users" />
-		
-	</label>
-	
 </div>
 
