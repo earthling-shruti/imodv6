@@ -11,10 +11,6 @@ class ImodUser {
 	boolean accountLocked
 	boolean passwordExpired
 
-	String firstName
-	String lastName
-	String middleInitial
-	String email
 	UserProfile profile
 	
 	static hasMany = [imods:Imod]
