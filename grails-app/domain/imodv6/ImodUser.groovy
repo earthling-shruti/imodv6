@@ -18,10 +18,6 @@ class ImodUser {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-		firstName nullable: true
-		lastName nullable: true
-		middleInitial nullable: true
-		email nullable: true
 		profile nullable: true
 	}
 

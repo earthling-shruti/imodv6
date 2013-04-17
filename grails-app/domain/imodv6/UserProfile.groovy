@@ -17,6 +17,18 @@ class UserProfile {
 
 	static belongsTo = [user:ImodUser]
     static constraints = {
+		// remove these constraints selectively in the future if profile is not nullable in ImodUser class
+		firstName nullable: true
+		lastName nullable: true
+		middleInitial nullable: true
+		email nullable: true
+		organization nullable: true
+		themeCode nullable: true
+		streetAddress nullable: true
+		city nullable: true
+		state nullable: true
+		country nullable: true
+		zip nullable: true
     }
 	
 	static mapping = {
