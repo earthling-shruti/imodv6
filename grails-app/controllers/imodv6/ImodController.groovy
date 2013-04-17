@@ -6,6 +6,15 @@ class ImodController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+	def springSecurityService
+	
+	def beforeInterceptor ={
+		if(!springSecurityService.isLoggedIn()){
+			redirect(controller:'login', action: 'auth')
+			return false
+		}
+	}
+	
     def index() {
         redirect(action: "list", params: params)
     }
@@ -26,14 +35,14 @@ class ImodController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance.id])
+        flash.message = message(code: 'default.created.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
         redirect(action: "show", id: imodInstance.id)
     }
 
     def show(Long id) {
         def imodInstance = Imod.get(id)
         if (!imodInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
             redirect(action: "list")
             return
         }
@@ -44,7 +53,7 @@ class ImodController {
     def edit(Long id) {
         def imodInstance = Imod.get(id)
         if (!imodInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
             redirect(action: "list")
             return
         }
@@ -55,7 +64,7 @@ class ImodController {
     def update(Long id, Long version) {
         def imodInstance = Imod.get(id)
         if (!imodInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
             redirect(action: "list")
             return
         }
@@ -77,25 +86,25 @@ class ImodController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance.id])
+        flash.message = message(code: 'default.updated.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
         redirect(action: "show", id: imodInstance.id)
     }
 
     def delete(Long id) {
         def imodInstance = Imod.get(id)
         if (!imodInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
             redirect(action: "list")
             return
         }
 
         try {
             imodInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'imod.label', default: 'Imod'), id])
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'imod.label', default: 'Imod'), id])
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
             redirect(action: "show", id: id)
         }
     }

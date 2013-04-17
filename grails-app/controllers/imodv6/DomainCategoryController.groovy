@@ -5,7 +5,15 @@ import org.springframework.dao.DataIntegrityViolationException
 class DomainCategoryController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	
+	def springSecurityService
+	
+	def beforeInterceptor ={
+		if(!springSecurityService.isLoggedIn()){
+			redirect(controller:'login', action: 'auth')
+			return false
+		}
+	}
     def index() {
         redirect(action: "list", params: params)
     }
@@ -26,14 +34,14 @@ class DomainCategoryController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance.id])
+        flash.message = message(code: 'default.created.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
         redirect(action: "show", id: domainCategoryInstance.id)
     }
 
     def show(Long id) {
         def domainCategoryInstance = DomainCategory.get(id)
         if (!domainCategoryInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
             redirect(action: "list")
             return
         }
@@ -44,7 +52,7 @@ class DomainCategoryController {
     def edit(Long id) {
         def domainCategoryInstance = DomainCategory.get(id)
         if (!domainCategoryInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
             redirect(action: "list")
             return
         }
@@ -55,7 +63,7 @@ class DomainCategoryController {
     def update(Long id, Long version) {
         def domainCategoryInstance = DomainCategory.get(id)
         if (!domainCategoryInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
             redirect(action: "list")
             return
         }
@@ -77,25 +85,25 @@ class DomainCategoryController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance.id])
+        flash.message = message(code: 'default.updated.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
         redirect(action: "show", id: domainCategoryInstance.id)
     }
 
     def delete(Long id) {
         def domainCategoryInstance = DomainCategory.get(id)
         if (!domainCategoryInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
             redirect(action: "list")
             return
         }
 
         try {
             domainCategoryInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), id])
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), id])
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'domainCategory.label', default: 'DomainCategory'), domainCategoryInstance])
             redirect(action: "show", id: id)
         }
     }
