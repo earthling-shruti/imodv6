@@ -112,4 +112,5 @@ grails {
 	}
  }
 
+//makes the imod page default url after user logs in
 grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/imod'
