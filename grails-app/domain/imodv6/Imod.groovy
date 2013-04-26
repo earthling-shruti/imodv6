@@ -30,6 +30,11 @@ class Imod {
 		schedule nullable: true
 		scheduleDate nullable: true
 		piechart nullable: true
+		timeRatio nullable: true
+		overview nullable: true
+		courseLocation nullable: true
+		courseSemester nullable: true
+		imodNumber nullable: true
     }
 	
 	static mapping = {

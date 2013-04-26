@@ -8,7 +8,7 @@
         <style type="text/css" media="screen">
         	#tabs-container{
         		margin-left:5%;
-        		margin-right:15%;
+        		margin-right:20%;
         		margin-top:2%;
         	}
         	#tabs-container{

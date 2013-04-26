@@ -240,14 +240,14 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${imodInstance?.owner}">
+				<%-- g:if test="${imodInstance?.owner}">
 				<li class="fieldcontain">
 					<span id="owner-label" class="property-label"><g:message code="imod.owner.label" default="Owner" /></span>
 					
 						<span class="property-value" aria-labelledby="owner-label"><g:link controller="imodUser" action="show" id="${imodInstance?.owner?.id}">${imodInstance?.owner?.encodeAsHTML()}</g:link></span>
 					
 				</li>
-				</g:if>
+				</g:if>  --%>
 			
 				<g:if test="${imodInstance?.sharedOwners}">
 				<li class="fieldcontain">

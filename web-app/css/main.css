@@ -625,7 +625,6 @@ a.square{
 
 .dashed-square {
 	text-align:center;
-	vertical-align:middle;
 	float: left;
 	width:200px;
 	height:100px;

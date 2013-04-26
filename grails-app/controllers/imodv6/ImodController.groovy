@@ -44,7 +44,7 @@ class ImodController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
-        redirect(action: "show", id: imodInstance.id)
+        redirect(action: "list")
     }
 
     def show(Long id) {

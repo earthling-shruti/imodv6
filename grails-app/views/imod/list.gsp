@@ -15,7 +15,8 @@
 				margin-top:5%;
 				margin-bottom:5.7%;
 				overflow-y:scroll;
-				padding-left:3.5%;	
+				padding-left:3.5%;
+				padding-top:2%;
 				-moz-box-shadow: 5px 5px 5px #888;
 				-webkit-box-shadow: 5px 5px 5px #888;
 				box-shadow: 5px 5px 5px #888;
@@ -35,10 +36,10 @@
 			
 		<div class="list-imod-body">
 			<div id="list-imod" class="content scaffold-list" role="main">
-				<g:link class="dashed-square" action="create" ><br/><br/><g:message code="default.new.label" args="[entityName]" /></g:link>
 				<g:if test="${flash.message}">
 					<div class="message" role="status">${flash.message}</div>
 				</g:if>
+				<g:link class="dashed-square" action="create" ><br/><br/><g:message code="default.new.label" args="[entityName]" /></g:link>
 				<g:each in="${imodInstanceList}" status="i" var="imodInstance">
 					<g:link action="edit" id="${imodInstance.id}" class="square"><br/><br/>${fieldValue(bean: imodInstance, field: "name")}</g:link>
 				</g:each>
