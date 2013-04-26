@@ -4,16 +4,20 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
-        <link href="../../css/redmond/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+        <link href="../../css/redmond1/jquery-ui-1.10.2.custom.css" rel="stylesheet">
         <style type="text/css" media="screen">
         	#tabs-container{
         		margin-left:5%;
         		margin-right:15%;
         		margin-top:2%;
         	}
+        	#tabs-container{
+        		font-size:12px;
+        	}
+
         </style>
-		<script src="../../js/jquery-1.9.1.js"></script>
-		<script src="../../js/jquery-ui-1.10.2.custom.js"></script>
+		<script src="../../js/jquery-1.9.1copy.js"></script>
+		<script src="../../js/jquery-ui-1.10.2.custom.min.js"></script>
 		<script>
 		  $(document).ready(function() {
 		    $("#tabs").tabs();
