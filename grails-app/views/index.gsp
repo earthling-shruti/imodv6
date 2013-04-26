@@ -22,7 +22,11 @@
 			.ie6 #status {
 				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 			}
-
+			#page-body {
+					margin: 0 1em 1em;
+					height: 60%;
+					padding-bottom:21.55%;
+				}
 			#status ul {
 				font-size: 0.9em;
 				list-style-type: none;
@@ -72,6 +76,7 @@
 
 				#page-body {
 					margin: 0 1em 1em;
+					height: 90%;
 				}
 
 				#page-body h1 {

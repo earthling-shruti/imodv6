@@ -2,6 +2,7 @@
 body,
 input, select, textarea {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	height:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,7 +18,8 @@ html {
 	background-image: linear-gradient(top, #aaa, #ddd);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
 	background-repeat: no-repeat;
-	height: 100%;
+	/*height: 100%;*/
+	overflow-y:scroll;
 	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -37,10 +39,10 @@ html * {
 }
 
 body {
-	background: #ffffff;
 	color: #333333;
 	margin: 0 auto;
-	max-width: 960px;
+	min-height: 60%;
+	/*max-width: 960px;*/
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
 	   -moz-box-shadow: 0 0 0.3em #2B3856;
 	-webkit-box-shadow: 0 0 0.3em #2B3856;
@@ -108,13 +110,14 @@ img {
 }
 
 .footer {
-	background: #0A1629;
+	text-align:center;
+	bottom:0;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
-	margin-top: 1.5em;
-	padding: 1em;
 	min-height: 1em;
+	padding-top: 1em;
+	padding-bottom:1em;
 }
 
 .footer a {
@@ -154,6 +157,7 @@ img {
 	float: left;
 	list-style-type: none;
 	margin-right: 0.5em;
+	margin-left: 6%;
 	padding: 0;
 }
 
@@ -595,5 +599,65 @@ a.skip {
 	left: -9999px;
 }
 #loginLinkContainer {
+	position:absolute;
+	top:100px;
+	right:5px;
+	color:#FFFFFF;
 	text-align:right;
 }
+
+.square {
+	float: left;
+	width:200px;
+	height:100px;
+	display:block;
+	overflow:auto;
+	border:solid 1px #000;
+	margin:20px;
+}
+
+a.square{
+	color:#2B3856;
+	text-align:center;
+	vertical-align:middle;
+	background-color:#F0EEEE;
+}
+
+.dashed-square {
+	text-align:center;
+	vertical-align:middle;
+	float: left;
+	width:200px;
+	height:100px;
+	display:block;
+	overflow:auto;
+	border:dashed 1px #000;
+	margin:20px;
+}
+
+a.dashed-square{
+}
+
+a.banner-home{
+	position:absolute;
+	top:100px;
+	right:330px;
+	text-align:right;
+	color:#FFFFFF;
+	background-color:#0C1625;
+}
+
+a.banner-imod{
+	position:absolute;
+	top:100px;
+	right:250px;
+	text-align:right;
+	color:#FFFFFF;
+	background-color:#0C1625;
+}
+
+a.banner-link{
+	color:#FFFFFF;
+	background-color:#0C1625;
+}
+

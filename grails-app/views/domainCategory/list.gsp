@@ -26,8 +26,7 @@
 					
 						<th><g:message code="domainCategory.domain.label" default="Domain" /></th>
 					
-						<g:sortableColumn property="name" title="${message(code: 'domainCategory.name.label', default: 'Name')}" />
-					
+						<g:sortableColumn property="name" title="${message(code: 'domainCategory.name.label', default: 'Name')}" />			
 					</tr>
 				</thead>
 				<tbody>

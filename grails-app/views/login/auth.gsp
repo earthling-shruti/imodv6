@@ -7,6 +7,7 @@
 		margin: 15px 0px;
 		padding: 0px;
 		text-align: center;
+		padding-bottom:3.55%;
 	}
 
 	#login .inner {

@@ -18,15 +18,17 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'colorsignature_med.png')}" alt="Grails"/></a>
+		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'colorsignature_med.png')}" alt="Grails"/></a>
 		<span id='s2ui_login_link_container'>
+			<a class="banner-imod" href="${createLink(uri: '/imod')}"><g:message code="IMOD"/></a>
+			<a class="banner-home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
 			<nobr>
-				<div id='loginLinkContainer'>
+				<div id='loginLinkContainer' class='banner-link'>
 					<sec:ifLoggedIn>
-						Logged in as <sec:username/> (<g:link controller='logout'>Logout</g:link>)
+						Logged in as <sec:username/><a href='${createLink(uri: '/logout')}' id='logoutLink' class='banner-link'>Logout</a>
 					</sec:ifLoggedIn>
 					<sec:ifNotLoggedIn>
-						<a href='${createLink(uri: '/login')}' id='loginLink'>Login</a>
+						<a href='${createLink(uri: '/login')}' id='loginLink' class='banner-link'>Login</a>
 					</sec:ifNotLoggedIn>
 					<sec:ifSwitched>
 						<a href='${request.contextPath}/j_spring_security_exit_user'>
@@ -38,7 +40,7 @@
 		</span>
 		</div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+		<div class="footer" role="contentinfo">Copyright © 2013 IMOD™</div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />
