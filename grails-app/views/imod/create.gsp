@@ -9,7 +9,7 @@
         		margin-left:5%;
         		margin-right:20%;
         		margin-top:2%;
-        		margin-bottom:4.2%;
+        		margin-bottom:4.06%;
         		font-size:12px;
         	}
         	.buttons{
@@ -21,16 +21,21 @@
         		font-family:"Ubuntu";
         	}
         	#tabs-2{
-        		margin-bottom:23.2%;
+        		margin-bottom:23.4%;
         	}
         	#tabs-3{
-        		margin-bottom:19.8%;
+        		margin-bottom:20%;
         	}
         	#tabs-4{
-        		margin-bottom:24.9%;
+        		margin-bottom:25.1%;
         	}
         	#tabs-5{
-        		margin-bottom:26.6%;
+        		margin-bottom:26.8%;
+        	}
+        	#create-imod{
+        		border: solid 1px #000;
+        		-moz-border-radius: 15px;
+				border-radius: 15px;
         	}
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
