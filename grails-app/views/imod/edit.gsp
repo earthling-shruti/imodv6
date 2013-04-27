@@ -6,8 +6,8 @@
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
         <style type="text/css" media="screen">
         	#tabs-container{
-        		margin-left:5%;
-        		margin-right:20%;
+        		margin-left:2.5%;
+        		margin-right:17.5%;
         		margin-top:2%;
         		margin-bottom:4.06%;
         		font-size:12px;
@@ -53,7 +53,7 @@
 		<div id="tabs-container">
 			<div id="tabs">
 			  <ul>
-			    <li><a href="#tabs-1">Overview</a></li>
+			    <li><a href="#tabs-1">Course Overview</a></li>
 			    <li><a href="#tabs-2">Learning Objectives</a></li>
 			    <li><a href="#tabs-3">Content</a></li>
 			    <li><a href="#tabs-4">Assessment</a></li>

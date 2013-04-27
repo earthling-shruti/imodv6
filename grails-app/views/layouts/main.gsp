@@ -19,14 +19,14 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'colorsignature_med.png')}" alt="Grails"/></a>
+		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'colorsignature_sml.png')}" alt="Grails"/></a>
 		<span id='s2ui_login_link_container'>
-			<a class="banner-imod" href="${createLink(uri: '/imod')}"><g:message code="My i-mod's"/></a>
+			<a class="banner-imod" href="${createLink(uri: '/imod')}"><g:message code="My i-mods"/></a>
 			<a class="banner-home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
 			<nobr>
 				<div id='loginLinkContainer' class='banner-link'>
 					<sec:ifLoggedIn>
-						Logged in as <sec:username/><a href='${createLink(uri: '/logout')}' id='logoutLink' class='banner-link'>Logout</a>
+						<sec:username/><a href='${createLink(uri: '/logout')}' id='logoutLink' class='banner-link'>Logout</a>
 					</sec:ifLoggedIn>
 					<sec:ifNotLoggedIn>
 						<a href='${createLink(uri: '/login')}' id='loginLink' class='banner-link'>Login</a>

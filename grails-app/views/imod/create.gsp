@@ -51,7 +51,7 @@
 		<div id="tabs-container">
 			<div id="tabs">
 			  	<ul>
-			    	<li><a href="#tabs-1">Overview</a></li>
+			    	<li><a href="#tabs-1">Course Overview</a></li>
 			    	<li><a href="#tabs-2">Learning Objectives</a></li>
 				    <li><a href="#tabs-3">Content</a></li>
 				    <li><a href="#tabs-4">Assessment</a></li>

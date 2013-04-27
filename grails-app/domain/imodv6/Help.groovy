@@ -1,7 +1,8 @@
 package imodv6
 
 class Help {
-	Integer helpItemId //TBD
+	Integer tabId
+	Integer tabFieldId
 	String text
 	
     static constraints = {
