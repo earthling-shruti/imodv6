@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
-        <link href="../../css/flick1/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+        <%-- <link href="../../css/flick1/jquery-ui-1.10.2.custom.css" rel="stylesheet"> --%>
         <style type="text/css" media="screen">
         	#tabs-container{
         		margin-left:5%;
@@ -36,9 +36,13 @@
         	#tabs-5{
         		margin-bottom:26.6%;
         	}
+        	#edit-imod{
+        		border: solid 1px #000;
+        		-moz-border-radius: 15px;
+				border-radius: 15px;
+        	}
         </style>
-		<script src="../../js/jquery-1.9.1copy.js"></script>
-		<script src="../../js/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script>
 		  $(document).ready(function() {
 		    $("#tabs").tabs();
@@ -68,7 +72,7 @@
 							</g:eachError>
 						</ul>
 						</g:hasErrors>
-						<g:form method="post" >
+						<g:form method="post">
 							<g:hiddenField name="id" value="${imodInstance?.id}" />
 							<g:hiddenField name="version" value="${imodInstance?.version}" />
 							<fieldset class="form">

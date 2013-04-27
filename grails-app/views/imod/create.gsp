@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
-        <link href="..//css/flick/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+        <%-- link href="..//css/flick/jquery-ui-1.10.2.custom.css" rel="stylesheet">--%>
         <style type="text/css" media="screen">
         	#tabs-container{
         		margin-left:5%;
@@ -34,8 +34,7 @@
         		margin-bottom:26.6%;
         	}
         </style>
-		<script src="..//js/jquery-1.9.1.js"></script>
-		<script src="..//js/jquery-ui-1.10.2.custom.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script>
 		  $(document).ready(function() {
 		    $("#tabs").tabs();
