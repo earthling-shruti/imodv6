@@ -18,17 +18,20 @@
         		position:absolute;
         		right:0;
         	}
+        	.ui-widget-content{
+        		font-family:"Ubuntu";
+        	}
         	#tabs-2{
-        		margin-bottom:25.3%;
+        		margin-bottom:23.2%;
         	}
         	#tabs-3{
-        		margin-bottom:20.5%;
+        		margin-bottom:19.8%;
         	}
         	#tabs-4{
-        		margin-bottom:25.3%;
+        		margin-bottom:24.9%;
         	}
         	#tabs-5{
-        		margin-bottom:26.9%;
+        		margin-bottom:26.6%;
         	}
         </style>
 		<script src="..//js/jquery-1.9.1.js"></script>
