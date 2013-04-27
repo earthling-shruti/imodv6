@@ -4,7 +4,6 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
-        <%-- link href="..//css/flick/jquery-ui-1.10.2.custom.css" rel="stylesheet">--%>
         <style type="text/css" media="screen">
         	#tabs-container{
         		margin-left:5%;
