@@ -4,15 +4,31 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
-        <link href="..//css/redmond/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+        <link href="..//css/flick/jquery-ui-1.10.2.custom.css" rel="stylesheet">
         <style type="text/css" media="screen">
         	#tabs-container{
         		margin-left:5%;
         		margin-right:20%;
         		margin-top:2%;
-        	}
-        	#tabs-container{
+        		margin-bottom:4.2%;
         		font-size:12px;
+        	}
+        	.buttons{
+        		width:10%;
+        		position:absolute;
+        		right:0;
+        	}
+        	#tabs-2{
+        		margin-bottom:25.3%;
+        	}
+        	#tabs-3{
+        		margin-bottom:20.5%;
+        	}
+        	#tabs-4{
+        		margin-bottom:25.3%;
+        	}
+        	#tabs-5{
+        		margin-bottom:26.9%;
         	}
         </style>
 		<script src="..//js/jquery-1.9.1.js"></script>
@@ -26,15 +42,10 @@
 	</head>
 	<body onLoad="myFunc()">
 		<a href="#create-imod" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
 		<div id="tabs-container">
 			<div id="tabs">
 			  	<ul>
-			    	<li><a href="#tabs-1">Learning Context</a></li>
+			    	<li><a href="#tabs-1">Overview</a></li>
 			    	<li><a href="#tabs-2">Learning Objectives</a></li>
 				    <li><a href="#tabs-3">Content</a></li>
 				    <li><a href="#tabs-4">Assessment</a></li>
@@ -53,11 +64,11 @@
 							</ul>
 						</g:hasErrors>
 						<g:form action="save" >
-							<fieldset class="form">
+							<fieldset class="form">								
+								<fieldset class="buttons">
+									<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+								</fieldset>
 								<g:render template="form"/>
-							</fieldset>
-							<fieldset class="buttons">
-								<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 							</fieldset>
 						</g:form>
 					</div>

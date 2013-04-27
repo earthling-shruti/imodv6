@@ -10,6 +10,22 @@
 	<g:textField name="name" required="" value="${imodInstance?.name}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'overview', 'error')} ">
+	<label for="overview">
+		<g:message code="imod.overview.label" default="Overview" />
+		
+	</label>
+	<g:textField name="overview" value="${imodInstance?.overview}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'subjectArea', 'error')} ">
+	<label for="subjectArea">
+		<g:message code="imod.subjectArea.label" default="Subject Area" />
+		
+	</label>
+	<g:textField name="subjectArea" value="${imodInstance?.subjectArea}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'creditHours', 'error')} ">
 	<label for="creditHours">
 		<g:message code="imod.creditHours.label" default="Credit Hours" />
@@ -98,13 +114,13 @@
 	<g:textField name="courseSemester" value="${imodInstance?.courseSemester}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'imodNumber', 'error')} ">
+<%-- div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'imodNumber', 'error')} ">
 	<label for="imodNumber">
 		<g:message code="imod.imodNumber.label" default="Imod Number" />
 		
 	</label>
 	<g:textField name="imodNumber" value="${imodInstance?.imodNumber}"/>
-</div>
+</div>--%>
 
 <%-- div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
 	<label for="instructors">
@@ -131,14 +147,6 @@
 
 </div>  --%>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'overview', 'error')} ">
-	<label for="overview">
-		<g:message code="imod.overview.label" default="Overview" />
-		
-	</label>
-	<g:textField name="overview" value="${imodInstance?.overview}"/>
-</div>
-
 <%--div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'owner', 'error')} required">
 	<label for="owner">
 		<g:message code="imod.owner.label" default="Owner" />
@@ -154,14 +162,6 @@
 	</label>
 	
 </div>   --%>
-
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'subjectArea', 'error')} ">
-	<label for="subjectArea">
-		<g:message code="imod.subjectArea.label" default="Subject Area" />
-		
-	</label>
-	<g:textField name="subjectArea" value="${imodInstance?.subjectArea}"/>
-</div>
 
 <!--  div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'timeRatio', 'error')} ">
 	<label for="timeRatio">
