@@ -6,14 +6,17 @@
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
         <style type="text/css" media="screen">
         	#tabs-container{
-        		margin-left:5%;
-        		margin-right:20%;
-        		margin-top:2%;
-        		margin-bottom:4.06%;
+        		margin-left:2.5%;
+        		margin-right:17.5%;
+        		margin-top:5%;
+        		margin-bottom:10.5%;
         		font-size:12px;
         	}
+        	.ui-tabs-anchor{
+        		font-family: "Ubuntu";
+        	}
         	.buttons{
-        		width:10%;
+        		width:20%;
         		position:absolute;
         		right:0;
         	}
@@ -21,21 +24,32 @@
         		font-family:"Ubuntu";
         	}
         	#tabs-2{
-        		margin-bottom:23.4%;
+        		margin-bottom:23.5%;
         	}
         	#tabs-3{
-        		margin-bottom:20%;
+        		margin-bottom:18.74%;
         	}
         	#tabs-4{
-        		margin-bottom:25.1%;
+        		margin-bottom:23.5%;
         	}
         	#tabs-5{
-        		margin-bottom:26.8%;
+        		margin-bottom:25.1%;
         	}
-        	#create-imod{
-        		border: solid 1px #000;
-        		-moz-border-radius: 15px;
-				border-radius: 15px;
+			
+			td{
+				padding:15px;
+			}
+			.buttons{
+				top:20px;
+			}
+        	.course_overview_form{
+        		padding: 0px 0px 20px 0px;
+				border: solid 1px #000;
+        	}
+        	.form_title{
+				background: #0A1629;
+				top:0;
+				color: #ffffff;
         	}
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -71,12 +85,41 @@
 							</ul>
 						</g:hasErrors>
 						<g:form action="save" >
-							<fieldset class="form">								
-								<fieldset class="buttons">
-									<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+							<fieldset class="form">
+								 <table>
+								    	<tr height="50px">
+									    	<td />
+									    	<td>
+												<fieldset class="buttons">
+													<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+												</fieldset>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="course_overview_form">
+													<div class="form_title">Course Details</div>
+													<g:render template="form_course_details"/>
+												</div>
+											</td>
+											<td>
+												<div class="course_overview_form">
+													<div class="form_title">Schedule</div>
+													<g:render template="form_course_schedule" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="course_overview_form">
+													<div class="form_title">Course Description</div>
+													<g:render template="form_course_description"/>
+												</div>
+											</td>
+											<td />
+										</tr>
+									</table>
 								</fieldset>
-								<g:render template="form"/>
-							</fieldset>
 						</g:form>
 					</div>
 

@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="endDate" title="${message(code: 'schedule.endDate.label', default: 'End Date')}" />
-					
 						<g:sortableColumn property="endOccurences" title="${message(code: 'schedule.endOccurences.label', default: 'End Occurences')}" />
 					
-						<g:sortableColumn property="friday" title="${message(code: 'schedule.friday.label', default: 'Friday')}" />
-					
-						<th><g:message code="schedule.imod.label" default="Imod" /></th>
+						<g:sortableColumn property="sunday" title="${message(code: 'schedule.sunday.label', default: 'Sunday')}" />
 					
 						<g:sortableColumn property="monday" title="${message(code: 'schedule.monday.label', default: 'Monday')}" />
 					
-						<g:sortableColumn property="repeats" title="${message(code: 'schedule.repeats.label', default: 'Repeats')}" />
+						<g:sortableColumn property="tuesday" title="${message(code: 'schedule.tuesday.label', default: 'Tuesday')}" />
+					
+						<g:sortableColumn property="wednesday" title="${message(code: 'schedule.wednesday.label', default: 'Wednesday')}" />
+					
+						<g:sortableColumn property="thursday" title="${message(code: 'schedule.thursday.label', default: 'Thursday')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${scheduleInstanceList}" status="i" var="scheduleInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${scheduleInstance.id}">${fieldValue(bean: scheduleInstance, field: "endDate")}</g:link></td>
+						<td><g:link action="show" id="${scheduleInstance.id}">${fieldValue(bean: scheduleInstance, field: "endOccurences")}</g:link></td>
 					
-						<td>${fieldValue(bean: scheduleInstance, field: "endOccurences")}</td>
-					
-						<td>${fieldValue(bean: scheduleInstance, field: "friday")}</td>
-					
-						<td>${fieldValue(bean: scheduleInstance, field: "imod")}</td>
+						<td>${fieldValue(bean: scheduleInstance, field: "sunday")}</td>
 					
 						<td>${fieldValue(bean: scheduleInstance, field: "monday")}</td>
 					
-						<td>${fieldValue(bean: scheduleInstance, field: "repeats")}</td>
+						<td>${fieldValue(bean: scheduleInstance, field: "tuesday")}</td>
+					
+						<td>${fieldValue(bean: scheduleInstance, field: "wednesday")}</td>
+					
+						<td>${fieldValue(bean: scheduleInstance, field: "thursday")}</td>
 					
 					</tr>
 				</g:each>

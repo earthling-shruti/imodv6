@@ -25,7 +25,9 @@
 			#page-body {
 					margin: 0 1em 1em;
 					height: 60%;
-					padding-bottom:21.55%;
+					padding-bottom:23%;
+					padding-right:15%;
+					padding-top: 2%;
 				}
 			#status ul {
 				font-size: 0.9em;

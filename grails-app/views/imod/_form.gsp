@@ -48,7 +48,7 @@
 		
 	</label>
 	<g:select id="coursePolicy" name="coursePolicy.id" from="${imodv6.CoursePolicy.list()}" optionKey="id" value="${imodInstance?.coursePolicy?.id}" class="many-to-one" noSelection="['null': '']"/>
-</div>
+</div> --%>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'schedule', 'error')} ">
 	<label for="schedule">
@@ -58,7 +58,7 @@
 	<g:select id="schedule" name="schedule.id" from="${imodv6.Schedule.list()}" optionKey="id" value="${imodInstance?.schedule?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleDate', 'error')} ">
+<%-- <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleDate', 'error')} ">
 	<label for="scheduleDate">
 		<g:message code="imod.scheduleDate.label" default="Schedule Date" />
 		

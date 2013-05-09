@@ -8,12 +8,12 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 		<style type="text/css" media="screen">
 			.list-imod-body{
-				height:50%;
+				height:400px;
 				background-color:#ffffff;
-				margin-left:5%;
-				margin-right:15%;
-				margin-top:5%;
-				margin-bottom:6.9%;
+        		margin-left:2.5%;
+        		margin-right:17.5%;
+        		margin-top:5%;
+				margin-bottom:4.7%;
 				overflow-y:scroll;
 				padding-left:3.5%;
 				padding-top:2%;

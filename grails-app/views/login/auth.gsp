@@ -7,13 +7,14 @@
 		margin: 15px 0px;
 		padding: 0px;
 		text-align: center;
-		padding-bottom:3.55%;
+		padding-bottom:4.2%;
 	}
 
 	#login .inner {
 		width: 340px;
 		padding-bottom: 6px;
 		margin: 60px auto;
+		margin-top: 10%;
 		text-align: left;
 		border: 1px solid #aab;
 		background-color: #f0f0fa;

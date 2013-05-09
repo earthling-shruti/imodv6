@@ -50,7 +50,7 @@
 	<g:textField name="officeHours" value="${instructorInstance?.officeHours}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'phones', 'error')} ">
+<%-- div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'phones', 'error')} ">
 	<label for="phones">
 		<g:message code="instructor.phones.label" default="Phones" />
 		
@@ -65,7 +65,7 @@
 </li>
 </ul>
 
-</div>
+</div> --%>
 
 <div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'webPage', 'error')} ">
 	<label for="webPage">

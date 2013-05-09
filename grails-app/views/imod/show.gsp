@@ -7,6 +7,9 @@
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 		<style type="text/css" media="screen">
+			#show-imod{
+				margin-bottom:30%;
+			}
 			.show-imod-buttons {
 				background-color: #efefef;
 				overflow: hidden;

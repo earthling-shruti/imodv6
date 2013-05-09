@@ -25,7 +25,7 @@ class ImodController {
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
 		def displayList = Imod.executeQuery("select distinct i from Imod i where i.owner="+currentUser)
-		[imodInstanceList: displayList, imodInstanceTotal: displayList.size()]
+		[imodInstanceList: displayList, imodInstanceTotal: displayList.size(), sort:"name"]
         //[imodInstanceList: Imod.list(params), imodInstanceTotal: Imod.count()]
     }
 
@@ -95,7 +95,7 @@ class ImodController {
         }
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'imod.label', default: 'Imod'), imodInstance])
-        redirect(action: "show", id: imodInstance.id)
+        redirect(action: "list")
     }
 
     def delete(Long id) {
