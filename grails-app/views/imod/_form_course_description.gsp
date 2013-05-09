@@ -5,7 +5,7 @@
 		<g:message code="imod.overview.label" default="Overview" />
 		
 	</label>
-	<g:textField name="overview" value="${imodInstance?.overview}"/>
+	<g:textArea name="overview" value="${imodInstance?.overview}" rows="4" cols="30"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'subjectArea', 'error')} ">
