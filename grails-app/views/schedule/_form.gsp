@@ -66,6 +66,14 @@
 	<g:field name="saturday" type="number" value="${scheduleInstance.saturday}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: scheduleInstance, field: 'repeatsDays', 'error')} ">
+	<label for="repeatsDays">
+		<g:message code="schedule.repeatsDays.label" default="Repeats Days" />
+		
+	</label>
+	<g:textField name="repeatsDays" value="${scheduleInstance?.repeatsDays}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: scheduleInstance, field: 'endDate', 'error')} required">
 	<label for="endDate">
 		<g:message code="schedule.endDate.label" default="End Date" />
@@ -80,30 +88,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="imod" name="imod.id" from="${imodv6.Imod.list()}" optionKey="id" required="" value="${scheduleInstance?.imod?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: scheduleInstance, field: 'repeats', 'error')} ">
-	<label for="repeats">
-		<g:message code="schedule.repeats.label" default="Repeats" />
-		
-	</label>
-	<g:textField name="repeats" value="${scheduleInstance?.repeats}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: scheduleInstance, field: 'repeatsDays', 'error')} ">
-	<label for="repeatsDays">
-		<g:message code="schedule.repeatsDays.label" default="Repeats Days" />
-		
-	</label>
-	<g:textField name="repeatsDays" value="${scheduleInstance?.repeatsDays}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: scheduleInstance, field: 'repeatsEvery', 'error')} ">
-	<label for="repeatsEvery">
-		<g:message code="schedule.repeatsEvery.label" default="Repeats Every" />
-		
-	</label>
-	<g:textField name="repeatsEvery" value="${scheduleInstance?.repeatsEvery}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: scheduleInstance, field: 'startDate', 'error')} required">

@@ -16,3 +16,19 @@
 	</label>
 	<g:datePicker name="schedule.endDate" precision="day"  value="${imodInstance?.schedule?.endDate}"  />
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'repeats', 'error')} ">
+	<label for="repeats">
+		<g:message code="imod.repeats.label" default="Repeats" />
+		
+	</label>
+	<g:select id="repeats" name="repeats.id" from="${imodv6.ScheduleRepeats.list()}" optionKey="id" value="${imodInstance?.repeats*.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'repeatsEvery', 'error')} ">
+	<label for="repeatsEvery">
+		<g:message code="imod.repeatsEvery.label" default="Repeats Every" />
+		
+	</label>
+	<g:select id="repeatsEvery" name="repeatsEvery.id" from="${imodv6.ScheduleRepeatsEvery.list()}" optionKey="id" value="${imodInstance?.repeatsEvery*.id}" class="many-to-one"/>
+</div>

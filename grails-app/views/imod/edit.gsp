@@ -143,6 +143,8 @@
 		}
 		
 		  $(document).ready(function() {
+			document.getElementById("repeats").removeAttribute("multiple")
+			document.getElementById("repeatsEvery").removeAttribute("multiple")
 		    $("#tabs").tabs();
 		    updateDatePicker();
 		    $("#spinner").ajaxComplete (function(event, request, settings){   

@@ -10,22 +10,6 @@
 	<g:textField name="name" required="" value="${imodInstance?.name}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'overview', 'error')} ">
-	<label for="overview">
-		<g:message code="imod.overview.label" default="Overview" />
-		
-	</label>
-	<g:textField name="overview" value="${imodInstance?.overview}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'subjectArea', 'error')} ">
-	<label for="subjectArea">
-		<g:message code="imod.subjectArea.label" default="Subject Area" />
-		
-	</label>
-	<g:textField name="subjectArea" value="${imodInstance?.subjectArea}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'creditHours', 'error')} ">
 	<label for="creditHours">
 		<g:message code="imod.creditHours.label" default="Credit Hours" />
@@ -42,13 +26,13 @@
 	<g:field name="numberOfSeats" type="number" value="${imodInstance.numberOfSeats}"/>
 </div>
 
-<%-- div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'coursePolicy', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'coursePolicy', 'error')} ">
 	<label for="coursePolicy">
 		<g:message code="imod.coursePolicy.label" default="Course Policy" />
 		
 	</label>
 	<g:select id="coursePolicy" name="coursePolicy.id" from="${imodv6.CoursePolicy.list()}" optionKey="id" value="${imodInstance?.coursePolicy?.id}" class="many-to-one" noSelection="['null': '']"/>
-</div> --%>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'schedule', 'error')} ">
 	<label for="schedule">
@@ -58,7 +42,7 @@
 	<g:select id="schedule" name="schedule.id" from="${imodv6.Schedule.list()}" optionKey="id" value="${imodInstance?.schedule?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<%-- <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleDate', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleDate', 'error')} ">
 	<label for="scheduleDate">
 		<g:message code="imod.scheduleDate.label" default="Schedule Date" />
 		
@@ -72,6 +56,62 @@
 		
 	</label>
 	<g:select id="piechart" name="piechart.id" from="${imodv6.Piechart.list()}" optionKey="id" value="${imodInstance?.piechart?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'timeRatio', 'error')} ">
+	<label for="timeRatio">
+		<g:message code="imod.timeRatio.label" default="Time Ratio" />
+		
+	</label>
+	<g:textField name="timeRatio" value="${imodInstance?.timeRatio}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'overview', 'error')} ">
+	<label for="overview">
+		<g:message code="imod.overview.label" default="Overview" />
+		
+	</label>
+	<g:textField name="overview" value="${imodInstance?.overview}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'courseLocation', 'error')} ">
+	<label for="courseLocation">
+		<g:message code="imod.courseLocation.label" default="Course Location" />
+		
+	</label>
+	<g:textField name="courseLocation" value="${imodInstance?.courseLocation}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'courseSemester', 'error')} ">
+	<label for="courseSemester">
+		<g:message code="imod.courseSemester.label" default="Course Semester" />
+		
+	</label>
+	<g:textField name="courseSemester" value="${imodInstance?.courseSemester}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'imodNumber', 'error')} ">
+	<label for="imodNumber">
+		<g:message code="imod.imodNumber.label" default="Imod Number" />
+		
+	</label>
+	<g:textField name="imodNumber" value="${imodInstance?.imodNumber}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleRepeats', 'error')} ">
+	<label for="scheduleRepeats">
+		<g:message code="imod.scheduleRepeats.label" default="Schedule Repeats" />
+		
+	</label>
+	<g:select id="scheduleRepeats" name="scheduleRepeats.id" from="${imodv6.ScheduleRepeats.list()}" optionKey="id" value="${imodInstance?.scheduleRepeats?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleRepeatsEvery', 'error')} ">
+	<label for="scheduleRepeatsEvery">
+		<g:message code="imod.scheduleRepeatsEvery.label" default="Schedule Repeats Every" />
+		
+	</label>
+	<g:select id="scheduleRepeatsEvery" name="scheduleRepeatsEvery.id" from="${imodv6.ScheduleRepeatsEvery.list()}" optionKey="id" value="${imodInstance?.scheduleRepeatsEvery?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'audience', 'error')} ">
@@ -96,33 +136,9 @@
 		
 	</label>
 	<g:select name="courseComponents" from="${imodv6.CourseComponentCode.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.courseComponents*.id}" class="many-to-many"/>
-</div> --%>
-
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'courseLocation', 'error')} ">
-	<label for="courseLocation">
-		<g:message code="imod.courseLocation.label" default="Course Location" />
-		
-	</label>
-	<g:textField name="courseLocation" value="${imodInstance?.courseLocation}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'courseSemester', 'error')} ">
-	<label for="courseSemester">
-		<g:message code="imod.courseSemester.label" default="Course Semester" />
-		
-	</label>
-	<g:textField name="courseSemester" value="${imodInstance?.courseSemester}"/>
-</div>
-
-<%-- div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'imodNumber', 'error')} ">
-	<label for="imodNumber">
-		<g:message code="imod.imodNumber.label" default="Imod Number" />
-		
-	</label>
-	<g:textField name="imodNumber" value="${imodInstance?.imodNumber}"/>
-</div>--%>
-
-<%-- div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
 	<label for="instructors">
 		<g:message code="imod.instructors.label" default="Instructors" />
 		
@@ -145,9 +161,9 @@
 </li>
 </ul>
 
-</div>  --%>
+</div>
 
-<%--div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'owner', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'owner', 'error')} required">
 	<label for="owner">
 		<g:message code="imod.owner.label" default="Owner" />
 		<span class="required-indicator">*</span>
@@ -161,15 +177,15 @@
 		
 	</label>
 	
-</div>   --%>
+</div>
 
-<!--  div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'timeRatio', 'error')} ">
-	<label for="timeRatio">
-		<g:message code="imod.timeRatio.label" default="Time Ratio" />
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'subjectArea', 'error')} ">
+	<label for="subjectArea">
+		<g:message code="imod.subjectArea.label" default="Subject Area" />
 		
 	</label>
-	<g:textField name="timeRatio" value="${imodInstance?.timeRatio}"/>
-</div>  -->
+	<g:textField name="subjectArea" value="${imodInstance?.subjectArea}"/>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'url', 'error')} ">
 	<label for="url">

@@ -15,6 +15,8 @@ class Imod {
 	CoursePolicy coursePolicy
 	Schedule schedule
 	ScheduleDate scheduleDate
+	ScheduleRepeats repeats
+	ScheduleRepeatsEvery repeatsEvery
 	Piechart piechart
 	
 	static belongsTo = ImodUser
@@ -35,6 +37,8 @@ class Imod {
 		courseLocation nullable: true
 		courseSemester nullable: true
 		imodNumber nullable: true
+		repeats nullable: true
+		repeatsEvery nullable: true
     }
 	
 	static mapping = {

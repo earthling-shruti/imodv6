@@ -1,8 +1,6 @@
 package imodv6
 
 class Schedule {
-	String repeats
-	String repeatsEvery
 	String repeatsDays
 	Date startDate
 	Date endDate
@@ -26,8 +24,6 @@ class Schedule {
 		thursday nullable: true
 		friday nullable: true
 		saturday nullable: true
-		repeats nullable: true
-		repeatsEvery nullable: true
 		repeatsDays nullable: true
     }
 	

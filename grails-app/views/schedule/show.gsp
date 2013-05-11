@@ -95,6 +95,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${scheduleInstance?.repeatsDays}">
+				<li class="fieldcontain">
+					<span id="repeatsDays-label" class="property-label"><g:message code="schedule.repeatsDays.label" default="Repeats Days" /></span>
+					
+						<span class="property-value" aria-labelledby="repeatsDays-label"><g:fieldValue bean="${scheduleInstance}" field="repeatsDays"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${scheduleInstance?.endDate}">
 				<li class="fieldcontain">
 					<span id="endDate-label" class="property-label"><g:message code="schedule.endDate.label" default="End Date" /></span>
@@ -109,33 +118,6 @@
 					<span id="imod-label" class="property-label"><g:message code="schedule.imod.label" default="Imod" /></span>
 					
 						<span class="property-value" aria-labelledby="imod-label"><g:link controller="imod" action="show" id="${scheduleInstance?.imod?.id}">${scheduleInstance?.imod?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${scheduleInstance?.repeats}">
-				<li class="fieldcontain">
-					<span id="repeats-label" class="property-label"><g:message code="schedule.repeats.label" default="Repeats" /></span>
-					
-						<span class="property-value" aria-labelledby="repeats-label"><g:fieldValue bean="${scheduleInstance}" field="repeats"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${scheduleInstance?.repeatsDays}">
-				<li class="fieldcontain">
-					<span id="repeatsDays-label" class="property-label"><g:message code="schedule.repeatsDays.label" default="Repeats Days" /></span>
-					
-						<span class="property-value" aria-labelledby="repeatsDays-label"><g:fieldValue bean="${scheduleInstance}" field="repeatsDays"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${scheduleInstance?.repeatsEvery}">
-				<li class="fieldcontain">
-					<span id="repeatsEvery-label" class="property-label"><g:message code="schedule.repeatsEvery.label" default="Repeats Every" /></span>
-					
-						<span class="property-value" aria-labelledby="repeatsEvery-label"><g:fieldValue bean="${scheduleInstance}" field="repeatsEvery"/></span>
 					
 				</li>
 				</g:if>
