@@ -38,28 +38,119 @@
         	}
 			
 			td{
-				padding:15px;
+				padding:5px;
 			}
 			.buttons{
 				top:20px;
 			}
         	.course_overview_form{
         		padding: 0px 0px 20px 0px;
-				border: solid 1px #000;
+				border: solid 1px #C0C0C0;
         	}
         	.form_title{
 				background: #0A1629;
 				top:0;
 				color: #ffffff;
         	}
-
+			.fieldcontain{
+				padding:0px 0px 0px 15px;
+				margin-right:-5em;
+			}
+			
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<r:require module="jqueryui" />
 		<script>
+		function updateDatePicker () { 
+		    $("input[value='date.struct']:hidden").each(function() {
+		        var dateFormat = "dd/mm/yy";
+		        var name = $(this).attr('name');            
+		        var id = name.replace(".", "_").replace("[", "_").replace("]", "_") + "_input"; // Create JQuery Friendly ID
+
+		        if ($('#'+id).length == 0) {
+
+		            // Find the Select Elements
+		            var selectDay= $(this).nextAll("select:eq(0)").hide();
+		            var selectMonth = $(this).nextAll("select:eq(1)").hide();
+		            var selectYear = $(this).nextAll("select:eq(2)").hide();
+
+		            // Get the Values
+		            var dateDay= $(selectDay).val();
+		            var dateMonth = $(selectMonth).val();
+		            var dateYear = $(selectYear).val();
+
+		            // Calculate the Current Input Value
+		            var val = "";           
+		            if (dateDay != "" && dateYear != "" && dateMonth != "") { // If there is a date in the Selects then use it otherwise it's empty
+		                var date = new Date (dateYear, dateMonth-1, dateDay);
+		                val = $.datepicker.formatDate(dateFormat, date);
+		            }
+
+		            // Create element
+		            var template = "<input type='text' name='"+ id +"' id='"+ id +"' value='"+ val +"'/>";
+
+		            if ($(this).parent(".datePickerCalenderView").size()) {
+		                template = "<div id='"+ id +"'/>";
+		            }
+
+
+		            $(this).before(template);       
+		            var displayWidget = $('#' + id );
+
+		            displayWidget.blur(function() {         
+		                var date = $.datepicker.parseDate(dateFormat, $(this).val());
+
+		                if (date == null) {
+		                    $(selectDay).val("");
+		                    $(selectMonth).val("");
+		                    $(selectYear).val("");
+		                }
+		                else {
+		                    $(selectDay).val(date.getDate());
+		                    $(selectMonth).val(date.getMonth()+1);
+		                    $(selectYear).val(date.getFullYear());
+		                }
+		            }).keydown(function(event) {
+		                // Show popup on Down Arrow
+		                if (event.keyCode == 40) {
+		                    displayWidget.datepicker("show");
+		                }
+		            });
+
+		            displayWidget.datepicker({  
+		                changeMonth: true,
+		                changeYear: true,
+		                dateFormat: dateFormat,
+		                constrainInput: true,           
+		                showButtonPanel: true,
+		                showWeeks: true,
+		                showOn: 'button',           
+		                onSelect: function(dateText, inst) { 
+		                    if (inst == null) {
+		                        $(selectDay).val("");
+		                        $(selectMonth).val("");
+		                        $(selectYear).val("");
+		                    }
+		                    else {
+		                        $(selectDay).val(inst.selectedDay);
+		                        $(selectMonth).val(inst.selectedMonth+1);
+		                        $(selectYear).val(inst.selectedYear);
+		                    }
+		                }           
+		            });     
+		        }
+		    });   
+		}
+		
 		  $(document).ready(function() {
 		    $("#tabs").tabs();
+		    updateDatePicker();
+		    $("#spinner").ajaxComplete (function(event, request, settings){   
+		        updateDatePicker();
+		    });
+		    
 		  });
+		  
 		</script>
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>

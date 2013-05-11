@@ -32,6 +32,14 @@
 	<g:field name="creditHours" type="number" value="${imodInstance.creditHours}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'timeRatio', 'error')} ">
+	<label for="timeRatio">
+		<g:message code="imod.timeRatio.label" default="Time Ratio" />
+		
+	</label>
+	<g:textField name="timeRatio" value="${imodInstance?.timeRatio}"/>
+</div> 
+
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'numberOfSeats', 'error')} ">
 	<label for="numberOfSeats">
 		<g:message code="imod.numberOfSeats.label" default="Number Of Seats" />

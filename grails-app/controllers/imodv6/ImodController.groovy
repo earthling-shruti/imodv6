@@ -30,10 +30,12 @@ class ImodController {
     }
 
     def create() {
+		System.out.println(params)
         [imodInstance: new Imod(params)]
     }
 
     def save() {
+		System.out.println(params)
 		params.remove('owner')
 		params.remove('owner.id')
 		params.put('owner.id', currentUser)
