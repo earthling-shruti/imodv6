@@ -23,20 +23,11 @@
 			</g:if>
 			<ol class="property-list instructor">
 			
-				<g:if test="${instructorInstance?.email}">
+				<g:if test="${instructorInstance?.middleInitial}">
 				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="instructor.email.label" default="Email" /></span>
+					<span id="middleInitial-label" class="property-label"><g:message code="instructor.middleInitial.label" default="Middle Initial" /></span>
 					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${instructorInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${instructorInstance?.firstName}">
-				<li class="fieldcontain">
-					<span id="firstName-label" class="property-label"><g:message code="instructor.firstName.label" default="First Name" /></span>
-					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${instructorInstance}" field="firstName"/></span>
+						<span class="property-value" aria-labelledby="middleInitial-label"><g:fieldValue bean="${instructorInstance}" field="middleInitial"/></span>
 					
 				</li>
 				</g:if>
@@ -59,11 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${instructorInstance?.middleInitial}">
+				<g:if test="${instructorInstance?.email}">
 				<li class="fieldcontain">
-					<span id="middleInitial-label" class="property-label"><g:message code="instructor.middleInitial.label" default="Middle Initial" /></span>
+					<span id="email-label" class="property-label"><g:message code="instructor.email.label" default="Email" /></span>
 					
-						<span class="property-value" aria-labelledby="middleInitial-label"><g:fieldValue bean="${instructorInstance}" field="middleInitial"/></span>
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${instructorInstance}" field="email"/></span>
 					
 				</li>
 				</g:if>
@@ -77,6 +68,42 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${instructorInstance?.webPage}">
+				<li class="fieldcontain">
+					<span id="webPage-label" class="property-label"><g:message code="instructor.webPage.label" default="Web Page" /></span>
+					
+						<span class="property-value" aria-labelledby="webPage-label"><g:fieldValue bean="${instructorInstance}" field="webPage"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${instructorInstance?.phoneNumber}">
+				<li class="fieldcontain">
+					<span id="phoneNumber-label" class="property-label"><g:message code="instructor.phoneNumber.label" default="Phone Number" /></span>
+					
+						<span class="property-value" aria-labelledby="phoneNumber-label"><g:fieldValue bean="${instructorInstance}" field="phoneNumber"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${instructorInstance?.firstName}">
+				<li class="fieldcontain">
+					<span id="firstName-label" class="property-label"><g:message code="instructor.firstName.label" default="First Name" /></span>
+					
+						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${instructorInstance}" field="firstName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${instructorInstance?.imod}">
+				<li class="fieldcontain">
+					<span id="imod-label" class="property-label"><g:message code="instructor.imod.label" default="Imod" /></span>
+					
+						<span class="property-value" aria-labelledby="imod-label"><g:link controller="imod" action="show" id="${instructorInstance?.imod?.id}">${instructorInstance?.imod?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${instructorInstance?.phones}">
 				<li class="fieldcontain">
 					<span id="phones-label" class="property-label"><g:message code="instructor.phones.label" default="Phones" /></span>
@@ -84,15 +111,6 @@
 						<g:each in="${instructorInstance.phones}" var="p">
 						<span class="property-value" aria-labelledby="phones-label"><g:link controller="instructorPhone" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${instructorInstance?.webPage}">
-				<li class="fieldcontain">
-					<span id="webPage-label" class="property-label"><g:message code="instructor.webPage.label" default="Web Page" /></span>
-					
-						<span class="property-value" aria-labelledby="webPage-label"><g:fieldValue bean="${instructorInstance}" field="webPage"/></span>
 					
 				</li>
 				</g:if>

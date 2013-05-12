@@ -40,27 +40,3 @@
 	</label>
 	<g:textField name="courseSemester" value="${imodInstance?.courseSemester}"/>
 </div>
-
-<%--div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
-	<label for="instructors">
-		<g:message code="imod.instructors.label" default="Instructors" />
-		
-	</label>
-	<g:select name="instructors" from="${imodv6.Instructor.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.instructors*.id}" class="many-to-many"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
-	<label for="instructors">
-		<g:message code="imod.instructors.label" default="Instructors" />
-		
-	</label>
-		
-	<ul class="one-to-many">
-		<%--g:each in="${imodInstance?.instructors?}" var="l">
-		    <li><g:link controller="instructor" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></li>
-		</g:each> 
-		<li class="add">
-			<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
-		</li>
-	</ul>
-</div>  --%>

@@ -56,7 +56,12 @@
 				padding:0px 0px 0px 15px;
 				margin-right:-5em;
 			}
-			
+			.sortable{
+				width:50%;
+			}
+			#custom_instructor{
+				width:60%;
+			}
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<r:require module="jqueryui" />
@@ -203,6 +208,14 @@
 											<div class="course_overview_form">
 												<div class="form_title">Schedule</div>
 												<g:render template="form_course_schedule" />
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<div class="course_overview_form">
+												<div class="form_title">Instructors</div>
+												<g:render template="form_course_instructors" />
 											</div>
 										</td>
 									</tr>

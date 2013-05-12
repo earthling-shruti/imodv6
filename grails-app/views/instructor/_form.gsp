@@ -2,20 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'email', 'error')} ">
-	<label for="email">
-		<g:message code="instructor.email.label" default="Email" />
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'middleInitial', 'error')} ">
+	<label for="middleInitial">
+		<g:message code="instructor.middleInitial.label" default="Middle Initial" />
 		
 	</label>
-	<g:textField name="email" value="${instructorInstance?.email}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'firstName', 'error')} ">
-	<label for="firstName">
-		<g:message code="instructor.firstName.label" default="First Name" />
-		
-	</label>
-	<g:textField name="firstName" value="${instructorInstance?.firstName}"/>
+	<g:textField name="middleInitial" value="${instructorInstance?.middleInitial}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'lastName', 'error')} ">
@@ -34,12 +26,12 @@
 	<g:textField name="location" value="${instructorInstance?.location}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'middleInitial', 'error')} ">
-	<label for="middleInitial">
-		<g:message code="instructor.middleInitial.label" default="Middle Initial" />
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'email', 'error')} ">
+	<label for="email">
+		<g:message code="instructor.email.label" default="Email" />
 		
 	</label>
-	<g:textField name="middleInitial" value="${instructorInstance?.middleInitial}"/>
+	<g:textField name="email" value="${instructorInstance?.email}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'officeHours', 'error')} ">
@@ -50,7 +42,39 @@
 	<g:textField name="officeHours" value="${instructorInstance?.officeHours}"/>
 </div>
 
-<%-- div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'phones', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'webPage', 'error')} ">
+	<label for="webPage">
+		<g:message code="instructor.webPage.label" default="Web Page" />
+		
+	</label>
+	<g:textField name="webPage" value="${instructorInstance?.webPage}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'phoneNumber', 'error')} ">
+	<label for="phoneNumber">
+		<g:message code="instructor.phoneNumber.label" default="Phone Number" />
+		
+	</label>
+	<g:textField name="phoneNumber" value="${instructorInstance?.phoneNumber}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'firstName', 'error')} ">
+	<label for="firstName">
+		<g:message code="instructor.firstName.label" default="First Name" />
+		
+	</label>
+	<g:textField name="firstName" value="${instructorInstance?.firstName}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'imod', 'error')} required">
+	<label for="imod">
+		<g:message code="instructor.imod.label" default="Imod" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="imod" name="imod.id" from="${imodv6.Imod.list()}" optionKey="id" required="" value="${instructorInstance?.imod?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'phones', 'error')} ">
 	<label for="phones">
 		<g:message code="instructor.phones.label" default="Phones" />
 		
@@ -65,13 +89,5 @@
 </li>
 </ul>
 
-</div> --%>
-
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'webPage', 'error')} ">
-	<label for="webPage">
-		<g:message code="instructor.webPage.label" default="Web Page" />
-		
-	</label>
-	<g:textField name="webPage" value="${instructorInstance?.webPage}"/>
 </div>
 

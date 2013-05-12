@@ -98,20 +98,20 @@
 	<g:textField name="imodNumber" value="${imodInstance?.imodNumber}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleRepeats', 'error')} ">
-	<label for="scheduleRepeats">
-		<g:message code="imod.scheduleRepeats.label" default="Schedule Repeats" />
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'repeats', 'error')} ">
+	<label for="repeats">
+		<g:message code="imod.repeats.label" default="Repeats" />
 		
 	</label>
-	<g:select id="scheduleRepeats" name="scheduleRepeats.id" from="${imodv6.ScheduleRepeats.list()}" optionKey="id" value="${imodInstance?.scheduleRepeats?.id}" class="many-to-one" noSelection="['null': '']"/>
+	<g:select id="repeats" name="repeats.id" from="${imodv6.ScheduleRepeats.list()}" optionKey="id" value="${imodInstance?.repeats?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'scheduleRepeatsEvery', 'error')} ">
-	<label for="scheduleRepeatsEvery">
-		<g:message code="imod.scheduleRepeatsEvery.label" default="Schedule Repeats Every" />
+<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'repeatsEvery', 'error')} ">
+	<label for="repeatsEvery">
+		<g:message code="imod.repeatsEvery.label" default="Repeats Every" />
 		
 	</label>
-	<g:select id="scheduleRepeatsEvery" name="scheduleRepeatsEvery.id" from="${imodv6.ScheduleRepeatsEvery.list()}" optionKey="id" value="${imodInstance?.scheduleRepeatsEvery?.id}" class="many-to-one" noSelection="['null': '']"/>
+	<g:select id="repeatsEvery" name="repeatsEvery.id" from="${imodv6.ScheduleRepeatsEvery.list()}" optionKey="id" value="${imodInstance?.repeatsEvery?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'audience', 'error')} ">
@@ -143,7 +143,16 @@
 		<g:message code="imod.instructors.label" default="Instructors" />
 		
 	</label>
-	<g:select name="instructors" from="${imodv6.Instructor.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.instructors*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${imodInstance?.instructors?}" var="i">
+    <li><g:link controller="instructor" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
+</li>
+</ul>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'learningObjectives', 'error')} ">
