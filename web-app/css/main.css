@@ -292,8 +292,6 @@ select[multiple] {
 }
 
 textarea {
-	width: 250px;
-	height: 150px;
 	overflow: auto; /* IE always renders vertical scrollbar without this */
 	vertical-align: top;
 }
@@ -432,7 +430,6 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 table {
 	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
-	width: 100%;
 	margin-bottom: 1em;
 }
 
@@ -453,6 +450,7 @@ td, th {
 	padding: 0.5em 0.6em;
 	text-align: left;
 	vertical-align: top;
+	width:70%;
 }
 
 th {

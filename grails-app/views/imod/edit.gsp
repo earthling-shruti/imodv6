@@ -56,12 +56,6 @@
 				padding:0px 0px 0px 15px;
 				margin-right:-5em;
 			}
-			.sortable{
-				width:50%;
-			}
-			#custom_instructor{
-				width:60%;
-			}
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<r:require module="jqueryui" />
@@ -151,6 +145,7 @@
 			document.getElementById("repeats").removeAttribute("multiple")
 			document.getElementById("repeatsEvery").removeAttribute("multiple")
 		    $("#tabs").tabs();
+		    $("#accordion").accordion();
 		    updateDatePicker();
 		    $("#spinner").ajaxComplete (function(event, request, settings){   
 		        updateDatePicker();
@@ -226,7 +221,31 @@
 												<g:render template="form_course_description"/>
 											</div>
 										</td>
-										<td />
+										<td>
+											<div class="course_overview_form" id="policy">
+												<div class="form_title">Course Policy</div>
+												<div id="accordion">
+												<h3>Grading procedure</h3>
+												<div><g:textArea name="gradingProcedure" rows="3" cols="30" />
+												</div>
+												<h3>Attendance and tardiness</h3>
+												<div><g:textArea name = "attendance" rows="3" cols="30" />
+												</div>
+												<h3>Class participation</h3>
+												<div><textarea rows="2" cols="30"></textarea>
+												</div>
+												<h3>Classroom decorum</h3>
+												<div><textarea rows="2" cols="30"></textarea>
+												</div>
+												<h3>Mixed exams/Make-up exams</h3>
+												<div><textarea rows="2" cols="30"></textarea>
+												</div>
+												<h3>Missed Assignments</h3>
+												<div><textarea rows="2" cols="30"></textarea>
+												</div>
+											</div>
+											</div>											
+										</td>
 									</tr>
 								</table>
 							</fieldset>
