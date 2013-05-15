@@ -675,6 +675,8 @@ a.banner-home{
 .resize_home{
 	width:15px;
 	height:auto;
+	position:relative;
+	left:-5px;
 }
 
 
@@ -692,3 +694,7 @@ a.banner-link{
 	background-color:#0C1625;
 }
 
+#imod_logo{
+	position: relative;
+	right: -25px;
+}

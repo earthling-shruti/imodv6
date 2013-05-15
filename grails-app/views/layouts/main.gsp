@@ -19,7 +19,7 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'colorsignature_sml.png')}" alt="Grails"/></a>
+		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><img id = "imod_logo" src="${resource(dir: 'images', file: 'colorsignature_sml.png')}" alt="Grails"/></a>
 		<span id='s2ui_login_link_container'>
 			
 			<a class="banner-imod" href="${createLink(uri: '/imod')}"><g:message code="My i-mods"/></a>
