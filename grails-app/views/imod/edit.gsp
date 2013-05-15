@@ -38,8 +38,8 @@
         	}
 			table.inner_table{
 				position:relative;
-				left:-50px;
-				width:112%;
+				left:-62.5px;
+				width:113%;
 				height:100%;
 			}
 			td{
@@ -108,14 +108,31 @@
 			}
 			#help_placeholder{
 				position:absolute;
-				right: 30px;
+				right: 25px;
 				top:144px;
 				border-width:1px;
-				padding-right: 120px;
+				padding-right: 108px;
 				padding-bottom:150px;
-				padding-left:10px;
+				padding-left:5px;
 				padding-top:5px;
 				background-color:#FFFF5A;
+			}
+			#resize_quicktip{
+				width:20px;
+				height:auto;
+				position:relative;
+				top:5px;
+			}
+			.fieldcontain label, .fieldcontain .property-label{
+				text-align:left;
+				margin-left:40px;
+			}
+			.fieldcontain{
+				margin-right:0em;
+			}
+			#custom_instructor{
+				height:127px;
+				overflow-y:scroll;
 			}
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -219,7 +236,7 @@
 	</head>
 	<body>
 		<div id="help_placeholder">
-			<span>Quick tip</span>
+			<img id="resize_quicktip" src="${resource(dir: 'images', file: 'quick_tip.png')}" alt=""/><span>Quick tip</span>
 		</div>
 		<div id="tabs-container">
 			<div id="tabs">

@@ -3,7 +3,8 @@
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
 
 	<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
-		<table id="custom_instructor">
+		<div id="custom_instructor">
+		<table>
 			<thead>
 				<tr>
 					<g:sortableColumn property="lastName" title="${message(code: 'imod.instructor.lastName.label', default: 'Last Name')}" />
@@ -25,4 +26,5 @@
 				</g:each>
 			</tbody>
 		</table>
+		</div>
 </div>
