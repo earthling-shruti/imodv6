@@ -113,14 +113,16 @@ img {
 
 /* GENERAL */
 
-#grailsLogo img{
+#grailsLogo{
 	position:relative;
-	left:17%;
+	/*left:17%;*/
+	left:0;
 }
 
 #grailsLogo a {
 	display: inline-block;
 	margin: 1em;
+	text-decoration:none;
 }
 
 .content {
@@ -428,7 +430,6 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 /* TABLES */
 
 table {
-	border-top: 1px solid #DFDFDF;
 	border-collapse: collapse;
 	margin-bottom: 1em;
 }
@@ -671,10 +672,16 @@ a.banner-home{
 	background-color:#0C1625;
 }
 
+.resize_home{
+	width:15px;
+	height:auto;
+}
+
+
 a.banner-imod{
 	position:absolute;
 	top:15px;
-	right:250px;
+	right:220px;
 	text-align:right;
 	color:#FFFFFF;
 	background-color:#0C1625;

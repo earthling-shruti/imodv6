@@ -21,8 +21,9 @@
 	<body>
 		<div id="grailsLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'colorsignature_sml.png')}" alt="Grails"/></a>
 		<span id='s2ui_login_link_container'>
-			<a class="banner-imod" href="${createLink(uri: '/imod')}"><g:message code="My i-mods"/></a>
-			<a class="banner-home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a>
+			
+			<a class="banner-imod" href="${createLink(uri: '/imod')}"><img class="resize_home" src="${resource(dir: 'images', file: 'user_sm.png')}" alt=""/><g:message code="My i-mods"/></a>
+			<a class="banner-home" href="${createLink(uri: '/')}"><img class="resize_home" src="${resource(dir: 'images', file: 'home_sm.png')}" alt=""/><g:message code="default.home.label"/></a>
 			<nobr>
 				<div id='loginLinkContainer' class='banner-link'>
 					<sec:ifLoggedIn>

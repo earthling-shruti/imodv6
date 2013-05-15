@@ -27,7 +27,8 @@ class InstructorController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'instructor.label', default: 'Instructor'), instructorInstance.id])
-        redirect(action: "show", id: instructorInstance.id)
+        //redirect(action: "show", id: instructorInstance.id)
+		redirect(action:"edit", controller:"imod")
     }
 
     def show(Long id) {
