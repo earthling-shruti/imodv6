@@ -133,6 +133,9 @@
 				height:127px;
 				overflow-y:scroll;
 			}
+			#instructor_table{
+				width:858px;
+			}
         </style>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<r:require module="jqueryui" />
@@ -261,7 +264,7 @@
 						</g:hasErrors>
 						<g:form action="save" >
 							<fieldset class="form">
-								 <table>
+								 <table class="inner_table">
 								    	<tr height="50px">
 									    	<td />
 									    	<td>

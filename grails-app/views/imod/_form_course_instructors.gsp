@@ -4,7 +4,7 @@
 
 	<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
 		<div id="custom_instructor">
-		<table>
+		<table id="instructor_table">
 			<thead>
 				<tr>
 					<g:sortableColumn property="lastName" title="${message(code: 'imod.instructor.lastName.label', default: 'Last Name')}" />
