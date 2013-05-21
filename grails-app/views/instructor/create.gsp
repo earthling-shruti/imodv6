@@ -9,11 +9,6 @@
 			#create-instructor{
 				padding-bottom:4%;
 			}
-			.buttons{
-				width:120px;
-				position:absolute;
-				right:180px;
-			}
 		</style>
 	</head>
 	<body>
@@ -32,11 +27,11 @@
 			</ul>
 			</g:hasErrors>
 			<g:form action="save" >
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
 				<fieldset class="form">
 					<g:render template="form"/>
+				</fieldset>
+				<fieldset class="buttons">
+					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
 		</div>
