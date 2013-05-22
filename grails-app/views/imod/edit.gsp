@@ -227,6 +227,7 @@
 			document.getElementById("repeatsEvery").removeAttribute("multiple")
 		    $("#tabs").tabs();
 		    $("#accordion").accordion();
+		    $("#clickthis").click(function(){$("#dialog").dialog();});
 		    updateDatePicker();
 		    $("#spinner").ajaxComplete (function(event, request, settings){   
 		        updateDatePicker();

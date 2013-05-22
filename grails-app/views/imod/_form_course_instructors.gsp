@@ -2,7 +2,8 @@
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
 
-	<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
+	<div id="clickthis">	<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
+	</div>
 		<div id="custom_instructor">
 		<table id="instructor_table">
 			<thead>

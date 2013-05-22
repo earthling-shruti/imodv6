@@ -349,5 +349,8 @@
 				</div>
 			</div>
 		</div>
+		<div id="create_instructor_dialog" title="Create Instructor">
+			<g:render template="/instructor/form" />
+		</div>
 	</body>
 </html>
