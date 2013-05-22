@@ -28,4 +28,11 @@
 			</tbody>
 		</table>
 		</div>
+		<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
+			<label for="instructors">
+				<g:message code="imod.instructors.label" default="Instructors" />
+				
+			</label>
+			<g:select name="instructors" from="${imodv6.Instructor.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.instructors*.id}" class="many-to-many" style="width:150px;" />
+		</div>
 </div>

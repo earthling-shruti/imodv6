@@ -6,84 +6,18 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'imod.label', default: 'Imod')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
-		<style type="text/css" media="screen">
-			#show-imod{
-				margin-bottom:30%;
-			}
-			.show-imod-buttons {
-				background-color: #efefef;
-				overflow: hidden;
-				padding: 0.3em;
-				   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
-				-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
-				        box-shadow: 0 0 3px 1px #aaaaaa;
-				margin: 0.1em 0 0 0;
-				border: none;
-			}
-			
-			.show-imod-buttons input,
-			.show-imod-buttons a {
-				background-color: transparent;
-				border: 0;
-				color: #666666;
-				cursor: pointer;
-				display: inline-block;
-				margin: 0 0.25em 0;
-				overflow: visible;
-				padding: 0.25em 0.7em;
-				text-decoration: none;
-			
-				   -moz-border-radius: 0.3em;
-				-webkit-border-radius: 0.3em;
-				        border-radius: 0.3em;
-			}
-			
-			.show-imod-buttons input:hover, .show-imod-buttons input:focus,
-			.show-imod-buttons a:hover, .show-imod-buttons a:focus {
-				background-color: #999999;
-				color: #ffffff;
-				outline: none;
-				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-				   -moz-box-shadow: none;
-				-webkit-box-shadow: none;
-				        box-shadow: none;
-			}
-			.no-borderradius .show-imod-buttons input:hover, .no-borderradius .show-imod-buttons input:focus,
-			.no-borderradius .show-imod-buttons a:hover, .no-borderradius .show-imod-buttons a:focus {
-				background-color: transparent;
-				color: #444444;
-				text-decoration: underline;
-			}
-			
-			.show-imod-buttons .delete, .show-imod-buttons .edit {
-				background-position: 0.7em center;
-				background-repeat: no-repeat;
-				text-indent: 25px;
-			}
-			
-			.ie6 .show-imod-buttons input.delete, .ie6 .show-imod-buttons input.edit,
-			.ie7 .show-imod-buttons input.delete, .ie7 .show-imod-buttons input.edit {
-				padding-left: 36px;
-			}
-						
-			.show-imod-buttons .delete {
-				background-image: url(../../images/skin/database_delete.png);
-			}
-			
-			.show-imod-buttons .edit {
-				background-image: url(../../images/skin/database_edit.png);
-			}
-		</style>
 	</head>
 	<body>
 		<a href="#show-imod" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-imod" class="content scaffold-show" role="main">
+			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -152,6 +86,69 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${imodInstance?.timeRatio}">
+				<li class="fieldcontain">
+					<span id="timeRatio-label" class="property-label"><g:message code="imod.timeRatio.label" default="Time Ratio" /></span>
+					
+						<span class="property-value" aria-labelledby="timeRatio-label"><g:fieldValue bean="${imodInstance}" field="timeRatio"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.overview}">
+				<li class="fieldcontain">
+					<span id="overview-label" class="property-label"><g:message code="imod.overview.label" default="Overview" /></span>
+					
+						<span class="property-value" aria-labelledby="overview-label"><g:fieldValue bean="${imodInstance}" field="overview"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.courseLocation}">
+				<li class="fieldcontain">
+					<span id="courseLocation-label" class="property-label"><g:message code="imod.courseLocation.label" default="Course Location" /></span>
+					
+						<span class="property-value" aria-labelledby="courseLocation-label"><g:fieldValue bean="${imodInstance}" field="courseLocation"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.courseSemester}">
+				<li class="fieldcontain">
+					<span id="courseSemester-label" class="property-label"><g:message code="imod.courseSemester.label" default="Course Semester" /></span>
+					
+						<span class="property-value" aria-labelledby="courseSemester-label"><g:fieldValue bean="${imodInstance}" field="courseSemester"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.imodNumber}">
+				<li class="fieldcontain">
+					<span id="imodNumber-label" class="property-label"><g:message code="imod.imodNumber.label" default="Imod Number" /></span>
+					
+						<span class="property-value" aria-labelledby="imodNumber-label"><g:fieldValue bean="${imodInstance}" field="imodNumber"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.repeats}">
+				<li class="fieldcontain">
+					<span id="repeats-label" class="property-label"><g:message code="imod.repeats.label" default="Repeats" /></span>
+					
+						<span class="property-value" aria-labelledby="repeats-label"><g:link controller="scheduleRepeats" action="show" id="${imodInstance?.repeats?.id}">${imodInstance?.repeats?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${imodInstance?.repeatsEvery}">
+				<li class="fieldcontain">
+					<span id="repeatsEvery-label" class="property-label"><g:message code="imod.repeatsEvery.label" default="Repeats Every" /></span>
+					
+						<span class="property-value" aria-labelledby="repeatsEvery-label"><g:link controller="scheduleRepeatsEvery" action="show" id="${imodInstance?.repeatsEvery?.id}">${imodInstance?.repeatsEvery?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${imodInstance?.audience}">
 				<li class="fieldcontain">
 					<span id="audience-label" class="property-label"><g:message code="imod.audience.label" default="Audience" /></span>
@@ -185,33 +182,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${imodInstance?.courseLocation}">
-				<li class="fieldcontain">
-					<span id="courseLocation-label" class="property-label"><g:message code="imod.courseLocation.label" default="Course Location" /></span>
-					
-						<span class="property-value" aria-labelledby="courseLocation-label"><g:fieldValue bean="${imodInstance}" field="courseLocation"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${imodInstance?.courseSemester}">
-				<li class="fieldcontain">
-					<span id="courseSemester-label" class="property-label"><g:message code="imod.courseSemester.label" default="Course Semester" /></span>
-					
-						<span class="property-value" aria-labelledby="courseSemester-label"><g:fieldValue bean="${imodInstance}" field="courseSemester"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${imodInstance?.imodNumber}">
-				<li class="fieldcontain">
-					<span id="imodNumber-label" class="property-label"><g:message code="imod.imodNumber.label" default="Imod Number" /></span>
-					
-						<span class="property-value" aria-labelledby="imodNumber-label"><g:fieldValue bean="${imodInstance}" field="imodNumber"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${imodInstance?.instructors}">
 				<li class="fieldcontain">
 					<span id="instructors-label" class="property-label"><g:message code="imod.instructors.label" default="Instructors" /></span>
@@ -234,23 +204,14 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${imodInstance?.overview}">
-				<li class="fieldcontain">
-					<span id="overview-label" class="property-label"><g:message code="imod.overview.label" default="Overview" /></span>
-					
-						<span class="property-value" aria-labelledby="overview-label"><g:fieldValue bean="${imodInstance}" field="overview"/></span>
-					
-				</li>
-				</g:if>
-			
-				<%-- g:if test="${imodInstance?.owner}">
+				<g:if test="${imodInstance?.owner}">
 				<li class="fieldcontain">
 					<span id="owner-label" class="property-label"><g:message code="imod.owner.label" default="Owner" /></span>
 					
 						<span class="property-value" aria-labelledby="owner-label"><g:link controller="imodUser" action="show" id="${imodInstance?.owner?.id}">${imodInstance?.owner?.encodeAsHTML()}</g:link></span>
 					
 				</li>
-				</g:if>  --%>
+				</g:if>
 			
 				<g:if test="${imodInstance?.sharedOwners}">
 				<li class="fieldcontain">
@@ -272,15 +233,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${imodInstance?.timeRatio}">
-				<li class="fieldcontain">
-					<span id="timeRatio-label" class="property-label"><g:message code="imod.timeRatio.label" default="Time Ratio" /></span>
-					
-						<span class="property-value" aria-labelledby="timeRatio-label"><g:fieldValue bean="${imodInstance}" field="timeRatio"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${imodInstance?.url}">
 				<li class="fieldcontain">
 					<span id="url-label" class="property-label"><g:message code="imod.url.label" default="Url" /></span>
@@ -292,7 +244,7 @@
 			
 			</ol>
 			<g:form>
-				<fieldset class="show-imod-buttons">
+				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${imodInstance?.id}" />
 					<g:link class="edit" action="edit" id="${imodInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />

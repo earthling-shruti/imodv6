@@ -9,14 +9,13 @@ class Instructor {
 	String officeHours
 	String webPage
 	String phoneNumber
+	ImodUser createdBy
 	
 	static hasMany = [phones:InstructorPhone]
 	
-	static belongsTo = [imod:Imod]
-	
     static constraints = {
 		middleInitial nullable: true
-		lastName nullable: true
+		firstName nullable: true
 		location nullable: true
 		email nullable: true
 		officeHours nullable: true
@@ -29,6 +28,9 @@ class Instructor {
 	}
 
 	def String toString(){
-		return firstName + middleInitial + lastName
+		def displayName = lastName
+		if(firstName != null){ displayName = displayName + " " + firstName}
+		if(middleInitial != null){ displayName = displayName + " " + middleInitial}
+		return displayName
 	} 
 }

@@ -86,20 +86,20 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${instructorInstance?.createdBy}">
+				<li class="fieldcontain">
+					<span id="createdBy-label" class="property-label"><g:message code="instructor.createdBy.label" default="Created By" /></span>
+					
+						<span class="property-value" aria-labelledby="createdBy-label"><g:link controller="imodUser" action="show" id="${instructorInstance?.createdBy?.id}">${instructorInstance?.createdBy?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${instructorInstance?.firstName}">
 				<li class="fieldcontain">
 					<span id="firstName-label" class="property-label"><g:message code="instructor.firstName.label" default="First Name" /></span>
 					
 						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${instructorInstance}" field="firstName"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${instructorInstance?.imod}">
-				<li class="fieldcontain">
-					<span id="imod-label" class="property-label"><g:message code="instructor.imod.label" default="Imod" /></span>
-					
-						<span class="property-value" aria-labelledby="imod-label"><g:link controller="imod" action="show" id="${instructorInstance?.imod?.id}">${instructorInstance?.imod?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

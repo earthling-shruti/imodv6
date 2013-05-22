@@ -143,16 +143,7 @@
 		<g:message code="imod.instructors.label" default="Instructors" />
 		
 	</label>
-	
-<ul class="one-to-many">
-<g:each in="${imodInstance?.instructors?}" var="i">
-    <li><g:link controller="instructor" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="instructor" action="create" params="['imod.id': imodInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'instructor.label', default: 'Instructor')])}</g:link>
-</li>
-</ul>
-
+	<g:select name="instructors" from="${imodv6.Instructor.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.instructors*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'learningObjectives', 'error')} ">
