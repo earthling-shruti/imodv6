@@ -104,6 +104,7 @@
 				course design.
 			</p>
 		</div>
+		<%--Uncomment the following block of code to view the list of controllers
 		<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>
 				<ul>
@@ -111,7 +112,7 @@
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
 					</g:each>
 				</ul>
-			</div>
+			</div> --%>
 <script type='text/javascript'>
 	<!--
 	(function() {
