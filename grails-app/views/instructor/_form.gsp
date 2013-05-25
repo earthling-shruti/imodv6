@@ -1,6 +1,12 @@
 <%@ page import="imodv6.Instructor" %>
 
-
+<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'firstName', 'error')} ">
+	<label for="firstName">
+		<g:message code="instructor.firstName.label" default="First Name" />
+		
+	</label>
+	<g:textField name="firstName" value="${instructorInstance?.firstName}"/>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'middleInitial', 'error')} ">
 	<label for="middleInitial">
@@ -58,21 +64,14 @@
 	<g:textField name="phoneNumber" value="${instructorInstance?.phoneNumber}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'createdBy', 'error')} required">
+<%--div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'createdBy', 'error')} required">
 	<label for="createdBy">
 		<g:message code="instructor.createdBy.label" default="Created By" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="createdBy" name="createdBy.id" from="${imodv6.ImodUser.list()}" optionKey="id" required="" value="${instructorInstance?.createdBy?.id}" class="many-to-one"/>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'firstName', 'error')} ">
-	<label for="firstName">
-		<g:message code="instructor.firstName.label" default="First Name" />
-		
-	</label>
-	<g:textField name="firstName" value="${instructorInstance?.firstName}"/>
-</div>
+ --%>
 
 <div class="fieldcontain ${hasErrors(bean: instructorInstance, field: 'phones', 'error')} ">
 	<label for="phones">
