@@ -95,6 +95,28 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'imodv6.ImodUser'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'imodv6.ImodUserRole'
 grails.plugins.springsecurity.authority.className = 'imodv6.Role'
 
+
+//InterceptUrlMap to make all links secure
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugins.springsecurity.interceptUrlMap = [
+	'/actionWord/**':['ROLE_USER'],
+	'/componentDesignation/**':['ROLE_USER'],
+	'/content/**':['ROLE_USER'],
+	'/contentPriorityCode/**':['ROLE_USER'],
+	'/contentResource/**':['ROLE_USER'],
+	'/contentResourceType/**':['ROLE_USER'],
+	'/courseComponentCode/**':['ROLE_USER'],
+	'/coursePolicyCategory/**':['ROLE_USER'],
+	'/coursePolicy/**':['ROLE_USER'],
+	'/domainCategory/**':['ROLE_USER'],
+	'/imod/**':['ROLE_USER'],
+	'/instructor/**':['ROLE_USER'],
+	'/instructorPhone/**':['ROLE_USER'],
+	'/learningDomain/**':['ROLE_USER'],
+	'/schedule/**':['ROLE_USER'],
+	'/scheduleRepeats/**':['ROLE_USER'],
+	'/scheduleRepeatsEvery/**':['ROLE_USER'],
+]
 //to allow user to login, avoid double encryption
 grails.plugins.springsecurity.ui.encodePassword = false
 
