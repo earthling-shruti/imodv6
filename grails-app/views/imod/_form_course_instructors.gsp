@@ -28,11 +28,11 @@
 			</tbody>
 		</table>
 		</div>
-		<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} ">
+		<div class="fieldcontain ${hasErrors(bean: imodInstance, field: 'instructors', 'error')} " style="margin-left:-20px;">
 			<label for="instructors">
-				<g:message code="imod.instructors.label" default="Instructors" />
+				<g:message code="imod.instructors.label" default="Select Instructors:" />
 				
 			</label>
-			<g:select name="instructors" from="${imodv6.Instructor.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.instructors*.id}" class="many-to-many" style="width:150px;" />
+			<g:select name="instructors" from="${imodv6.Instructor.list()}" multiple="multiple" optionKey="id" size="5" value="${imodInstance?.instructors*.id}" class="many-to-many" style="width:150px;margin-left:-110px;" />
 		</div>
 </div>
