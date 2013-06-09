@@ -5,6 +5,7 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
+grails.project.war.file = "target/${appName}.war"
 
 // uncomment (and adjust settings) to fork the JVM to isolate classpaths
 //grails.project.fork = [
